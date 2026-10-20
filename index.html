@@ -2424,6 +2424,12 @@ border: 0;
   </ul></li>
   <li><a href="#distribution-of-bet-amounts-hhi" id="toc-distribution-of-bet-amounts-hhi" class="nav-link" data-scroll-target="#distribution-of-bet-amounts-hhi">Distribution of Bet Amounts (HHI)</a></li>
   <li><a href="#bet-consistency" id="toc-bet-consistency" class="nav-link" data-scroll-target="#bet-consistency">Bet Consistency</a></li>
+  <li><a href="#division-win-likelihood" id="toc-division-win-likelihood" class="nav-link" data-scroll-target="#division-win-likelihood">Division Win Likelihood</a>
+  <ul class="collapse">
+  <li><a href="#mean-likelihood-by-team" id="toc-mean-likelihood-by-team" class="nav-link" data-scroll-target="#mean-likelihood-by-team">Mean Likelihood by Team</a></li>
+  <li><a href="#division-tables-and-sums" id="toc-division-tables-and-sums" class="nav-link" data-scroll-target="#division-tables-and-sums">Division Tables and Sums</a></li>
+  <li><a href="#sub--and-superadditivity" id="toc-sub--and-superadditivity" class="nav-link" data-scroll-target="#sub--and-superadditivity">Sub- and Superadditivity</a></li>
+  </ul></li>
   <li><a href="#individual-selections" id="toc-individual-selections" class="nav-link" data-scroll-target="#individual-selections">Individual Selections</a></li>
   <li><a href="#llm-vs.-participant-accuracy" id="toc-llm-vs.-participant-accuracy" class="nav-link" data-scroll-target="#llm-vs.-participant-accuracy">LLM vs. Participant Accuracy</a>
   <ul class="collapse">
@@ -4434,6 +4440,615 @@ No Odds
 </div>
 </div>
 </div>
+</section>
+<section id="division-win-likelihood" class="level1">
+<h1>Division Win Likelihood</h1>
+<p>Starting in Week 6, participants rated how likely each of the 32 teams is to win its division (0 to 100 for each team, no requirement that a division adds to 100). Each answer is stored as one JSON value, which is unpacked here to one row per participant, week and team.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small">
+<caption>Division Win Question: Participants per Week</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">Week</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Participants</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">257</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="mean-likelihood-by-team" class="level2">
+<h2 class="anchored" data-anchor-id="mean-likelihood-by-team">Mean Likelihood by Team</h2>
+<p>Mean rating (0 to 100) across participants for each team and week. The last column pools every rating across all weeks, and teams are sorted from highest to lowest on it.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small">
+<caption>Mean Likelihood of Winning the Division, by Team and Week</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Team</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Division</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Week 6</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Mean (all weeks)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Kansas City Chiefs</td>
+<td style="text-align: left;">AFC West</td>
+<td style="text-align: left;">69.8%</td>
+<td style="text-align: left;">69.8%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">San Francisco 49ers</td>
+<td style="text-align: left;">NFC West</td>
+<td style="text-align: left;">67.7%</td>
+<td style="text-align: left;">67.7%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Buffalo Bills</td>
+<td style="text-align: left;">AFC East</td>
+<td style="text-align: left;">66.6%</td>
+<td style="text-align: left;">66.6%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jacksonville Jaguars</td>
+<td style="text-align: left;">AFC South</td>
+<td style="text-align: left;">61.5%</td>
+<td style="text-align: left;">61.5%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Minnesota Vikings</td>
+<td style="text-align: left;">NFC North</td>
+<td style="text-align: left;">52.7%</td>
+<td style="text-align: left;">52.7%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Baltimore Ravens</td>
+<td style="text-align: left;">AFC North</td>
+<td style="text-align: left;">52.6%</td>
+<td style="text-align: left;">52.6%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">New England Patriots</td>
+<td style="text-align: left;">AFC East</td>
+<td style="text-align: left;">43.3%</td>
+<td style="text-align: left;">43.3%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Carolina Panthers</td>
+<td style="text-align: left;">NFC South</td>
+<td style="text-align: left;">41.5%</td>
+<td style="text-align: left;">41.5%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Los Angeles Rams</td>
+<td style="text-align: left;">NFC West</td>
+<td style="text-align: left;">39.1%</td>
+<td style="text-align: left;">39.1%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Seattle Seahawks</td>
+<td style="text-align: left;">NFC West</td>
+<td style="text-align: left;">38.2%</td>
+<td style="text-align: left;">38.2%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Denver Broncos</td>
+<td style="text-align: left;">AFC West</td>
+<td style="text-align: left;">35.7%</td>
+<td style="text-align: left;">35.7%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Detroit Lions</td>
+<td style="text-align: left;">NFC North</td>
+<td style="text-align: left;">35.4%</td>
+<td style="text-align: left;">35.4%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Philadelphia Eagles</td>
+<td style="text-align: left;">NFC East</td>
+<td style="text-align: left;">35.0%</td>
+<td style="text-align: left;">35.0%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cincinnati Bengals</td>
+<td style="text-align: left;">AFC North</td>
+<td style="text-align: left;">34.8%</td>
+<td style="text-align: left;">34.8%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Atlanta Falcons</td>
+<td style="text-align: left;">NFC South</td>
+<td style="text-align: left;">34.7%</td>
+<td style="text-align: left;">34.7%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New York Giants</td>
+<td style="text-align: left;">NFC East</td>
+<td style="text-align: left;">34.4%</td>
+<td style="text-align: left;">34.4%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chicago Bears</td>
+<td style="text-align: left;">NFC North</td>
+<td style="text-align: left;">34.3%</td>
+<td style="text-align: left;">34.3%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Green Bay Packers</td>
+<td style="text-align: left;">NFC North</td>
+<td style="text-align: left;">33.4%</td>
+<td style="text-align: left;">33.4%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pittsburgh Steelers</td>
+<td style="text-align: left;">AFC North</td>
+<td style="text-align: left;">33.2%</td>
+<td style="text-align: left;">33.2%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dallas Cowboys</td>
+<td style="text-align: left;">NFC East</td>
+<td style="text-align: left;">32.4%</td>
+<td style="text-align: left;">32.4%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Indianapolis Colts</td>
+<td style="text-align: left;">AFC South</td>
+<td style="text-align: left;">26.4%</td>
+<td style="text-align: left;">26.4%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New Orleans Saints</td>
+<td style="text-align: left;">NFC South</td>
+<td style="text-align: left;">21.3%</td>
+<td style="text-align: left;">21.3%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cleveland Browns</td>
+<td style="text-align: left;">AFC North</td>
+<td style="text-align: left;">20.3%</td>
+<td style="text-align: left;">20.3%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Las Vegas Raiders</td>
+<td style="text-align: left;">AFC West</td>
+<td style="text-align: left;">19.6%</td>
+<td style="text-align: left;">19.6%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Houston Texans</td>
+<td style="text-align: left;">AFC South</td>
+<td style="text-align: left;">19.1%</td>
+<td style="text-align: left;">19.1%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Washington Commanders</td>
+<td style="text-align: left;">NFC East</td>
+<td style="text-align: left;">18.4%</td>
+<td style="text-align: left;">18.4%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tampa Bay Buccaneers</td>
+<td style="text-align: left;">NFC South</td>
+<td style="text-align: left;">18.3%</td>
+<td style="text-align: left;">18.3%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New York Jets</td>
+<td style="text-align: left;">AFC East</td>
+<td style="text-align: left;">11.9%</td>
+<td style="text-align: left;">11.9%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Los Angeles Chargers</td>
+<td style="text-align: left;">AFC West</td>
+<td style="text-align: left;">10.7%</td>
+<td style="text-align: left;">10.7%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Arizona Cardinals</td>
+<td style="text-align: left;">NFC West</td>
+<td style="text-align: left;">10.1%</td>
+<td style="text-align: left;">10.1%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tennessee Titans</td>
+<td style="text-align: left;">AFC South</td>
+<td style="text-align: left;">8.9%</td>
+<td style="text-align: left;">8.9%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Miami Dolphins</td>
+<td style="text-align: left;">AFC East</td>
+<td style="text-align: left;">7.8%</td>
+<td style="text-align: left;">7.8%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="division-tables-and-sums" class="level2">
+<h2 class="anchored" data-anchor-id="division-tables-and-sums">Division Tables and Sums</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="kable_wrapper caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><table class="caption-top table table-sm table-striped small">
+<caption>AFC East</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Team</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Week 6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Buffalo Bills</td>
+<td style="text-align: right;">66.6%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New England Patriots</td>
+<td style="text-align: right;">43.3%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">New York Jets</td>
+<td style="text-align: right;">11.9%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Miami Dolphins</td>
+<td style="text-align: right;">7.8%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Sum</strong></td>
+<td style="text-align: right;"><span style="font-weight: bold;    color: rgba(192, 57, 43, 1) !important;">129.5%</span></td>
+</tr>
+</tbody>
+</table></td>
+<td><table class="caption-top table table-sm table-striped small">
+<caption>NFC East</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Team</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Week 6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Philadelphia Eagles</td>
+<td style="text-align: right;">35.0%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New York Giants</td>
+<td style="text-align: right;">34.4%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dallas Cowboys</td>
+<td style="text-align: right;">32.4%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Washington Commanders</td>
+<td style="text-align: right;">18.4%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Sum</strong></td>
+<td style="text-align: right;"><span style="font-weight: bold;    color: rgba(192, 57, 43, 1) !important;">120.2%</span></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table>
+
+<br>
+
+<table class="kable_wrapper caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><table class="caption-top table table-sm table-striped small">
+<caption>AFC North</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Team</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Week 6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Baltimore Ravens</td>
+<td style="text-align: right;">52.6%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cincinnati Bengals</td>
+<td style="text-align: right;">34.8%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pittsburgh Steelers</td>
+<td style="text-align: right;">33.2%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cleveland Browns</td>
+<td style="text-align: right;">20.3%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Sum</strong></td>
+<td style="text-align: right;"><span style="font-weight: bold;    color: rgba(192, 57, 43, 1) !important;">140.9%</span></td>
+</tr>
+</tbody>
+</table></td>
+<td><table class="caption-top table table-sm table-striped small">
+<caption>NFC North</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Team</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Week 6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Minnesota Vikings</td>
+<td style="text-align: right;">52.7%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Detroit Lions</td>
+<td style="text-align: right;">35.4%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chicago Bears</td>
+<td style="text-align: right;">34.3%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Green Bay Packers</td>
+<td style="text-align: right;">33.4%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Sum</strong></td>
+<td style="text-align: right;"><span style="font-weight: bold;    color: rgba(192, 57, 43, 1) !important;">155.8%</span></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table>
+
+<br>
+
+<table class="kable_wrapper caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><table class="caption-top table table-sm table-striped small">
+<caption>AFC South</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Team</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Week 6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Jacksonville Jaguars</td>
+<td style="text-align: right;">61.5%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Indianapolis Colts</td>
+<td style="text-align: right;">26.4%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Houston Texans</td>
+<td style="text-align: right;">19.1%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tennessee Titans</td>
+<td style="text-align: right;">8.9%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Sum</strong></td>
+<td style="text-align: right;"><span style="font-weight: bold;    color: rgba(192, 57, 43, 1) !important;">115.9%</span></td>
+</tr>
+</tbody>
+</table></td>
+<td><table class="caption-top table table-sm table-striped small">
+<caption>NFC South</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Team</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Week 6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Carolina Panthers</td>
+<td style="text-align: right;">41.5%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Atlanta Falcons</td>
+<td style="text-align: right;">34.7%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">New Orleans Saints</td>
+<td style="text-align: right;">21.3%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tampa Bay Buccaneers</td>
+<td style="text-align: right;">18.3%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Sum</strong></td>
+<td style="text-align: right;"><span style="font-weight: bold;    color: rgba(192, 57, 43, 1) !important;">115.8%</span></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table>
+
+<br>
+
+<table class="kable_wrapper caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><table class="caption-top table table-sm table-striped small">
+<caption>AFC West</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Team</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Week 6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Kansas City Chiefs</td>
+<td style="text-align: right;">69.8%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Denver Broncos</td>
+<td style="text-align: right;">35.7%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Las Vegas Raiders</td>
+<td style="text-align: right;">19.6%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Los Angeles Chargers</td>
+<td style="text-align: right;">10.7%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Sum</strong></td>
+<td style="text-align: right;"><span style="font-weight: bold;    color: rgba(192, 57, 43, 1) !important;">135.7%</span></td>
+</tr>
+</tbody>
+</table></td>
+<td><table class="caption-top table table-sm table-striped small">
+<caption>NFC West</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Team</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Week 6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">San Francisco 49ers</td>
+<td style="text-align: right;">67.7%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Los Angeles Rams</td>
+<td style="text-align: right;">39.1%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Seattle Seahawks</td>
+<td style="text-align: right;">38.2%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Arizona Cardinals</td>
+<td style="text-align: right;">10.1%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Sum</strong></td>
+<td style="text-align: right;"><span style="font-weight: bold;    color: rgba(192, 57, 43, 1) !important;">155.1%</span></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="sub--and-superadditivity" class="level2">
+<h2 class="anchored" data-anchor-id="sub--and-superadditivity">Sub- and Superadditivity</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small">
+<caption>Sub- and Superadditivity of Division Win Ratings (division level, threshold = 10 points)</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">Week</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">N (participant x division)</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">% &lt; 100</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">% = 100</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">% &gt; 100</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">% &lt; 90</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">% &gt; 110</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">2056</td>
+<td style="text-align: left;">23.4%</td>
+<td style="text-align: left;">9.5%</td>
+<td style="text-align: left;">67.1%</td>
+<td style="text-align: left;">15.0%</td>
+<td style="text-align: left;">56.4%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small">
+<caption>Sub- and Superadditivity of Division Win Ratings (participant level, threshold = 10 points)</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">Week</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">N (participants)</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">% &lt; 100</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">% = 100</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">% &gt; 100</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">% &lt; 90</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">% &gt; 110</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">257</td>
+<td style="text-align: left;">19.8%</td>
+<td style="text-align: left;">3.5%</td>
+<td style="text-align: left;">76.7%</td>
+<td style="text-align: left;">8.9%</td>
+<td style="text-align: left;">64.2%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="individual-selections" class="level1">
 <h1>Individual Selections</h1>
